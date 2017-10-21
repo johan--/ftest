@@ -38,6 +38,7 @@ export default class App extends Component<{}> {
       })
       .fetch('GET',`https://djjob.ru/book/testbook.epub`)
       .then((res) => {
+        console.log(res)
         this.setState({downloaded: true, filePath: res.path()}, this.openEpub)
         // open the document directly
         //RNFetchBlob.ios.previewDocument(res.path())
