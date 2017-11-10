@@ -11,18 +11,12 @@ import {
   Text,
   View,
   NativeModules,
-  ActivityIndicator
+  ActivityIndicator,
+  InteractionManager
 } from 'react-native';
 //import RNFS from 'react-native-fs';
 import RNFetchBlob from 'react-native-fetch-blob'
 const { RNFolioReader } = NativeModules
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 export default class App extends Component<{}> {
 
@@ -31,15 +25,28 @@ export default class App extends Component<{}> {
    }
    componentDidMount() {
      //RNFolioReader.open(`testbook`)
+this.openEpub()
+return
 
+     let dirs = RNFetchBlob.fs.dirs
      RNFetchBlob.config({
-        fileCache : true,
-        appendExt : 'epub'
+        path: dirs.SDCardApplicationDir + '/testbook.epub'
+        /*,
+        addAndroidDownloads : {
+            useDownloadManager : false, // <-- this is the only thing required
+            // Optional, override notification setting (default to true)
+            notification : false,
+            // Optional, but recommended since android DownloadManager will fail when
+            // the url does not contains a file extension, by default the mime type will be text/plain
+            mime : 'application/epub+zip',
+            //description : 'A book downloaded by download manager.'
+        }
+        */
       })
       .fetch('GET',`https://djjob.ru/book/testbook.epub`)
       .then((res) => {
-        console.log(res)
-        this.setState({downloaded: true, filePath: res.path()}, this.openEpub)
+        console.log(res.path())
+        this.setState({downloaded: true, filePath: res.path() }, this.openEpub)
         // open the document directly
         //RNFetchBlob.ios.previewDocument(res.path())
         // or show options
@@ -60,9 +67,13 @@ export default class App extends Component<{}> {
 
   }
 
-  openEpub = async () => {
+  openEpub =  () => {
     const { filePath } = this.state
-    await RNFolioReader.open(filePath)
+    console.log(filePath)
+    InteractionManager.runAfterInteractions(() => {
+        RNFolioReader.open(filePath)
+    });
+
   }
   render() {
                 // after this line

@@ -94,13 +94,25 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
+packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    compileSdkVersion 24
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.ftest"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         ndk {
@@ -137,6 +149,7 @@ android {
 }
 
 dependencies {
+    compile 'com.folioreader:folioreader:0.3.2'
     compile project(':react-native-fetch-blob')
     compile project(':react-native-fs')
     compile fileTree(dir: "libs", include: ["*.jar"])

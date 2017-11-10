@@ -26,7 +26,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new RNFetchBlobPackage(),
-            new RNFSPackage()
+            new RNFSPackage(),
+            new RNFolioReaderPackage()
       );
     }
 
@@ -46,4 +47,6 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+
 }
