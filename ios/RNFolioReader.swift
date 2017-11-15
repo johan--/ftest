@@ -3,6 +3,9 @@ import Foundation
 import FolioReaderKit
 
 @objc(RNFolioReader)
+class RNFolioReader: UIView {
+}
+/*
 class RNFolioReader: NSObject {
   
   @objc func open(_ resourcePath: String) -> Void {
@@ -14,3 +17,4 @@ class RNFolioReader: NSObject {
   }
   
 }
+ */

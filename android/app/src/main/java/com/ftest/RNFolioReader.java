@@ -66,7 +66,7 @@ public class RNFolioReader extends ReactContextBaseJavaModule {
    //FolioReader folioReader = new FolioReader(mActivity);
    folioReader = new FolioReader(mContext.getCurrentActivity());
    //Uri uri = Uri.parse("file://" + filePath);
-   folioReader.openBook("file:///android_asset/aayesha.epub");
-   //folioReader.openBook(filePath);
+   //folioReader.openBook("file:///android_asset/aayesha.epub");
+   folioReader.openBook(filePath);
   }
 }

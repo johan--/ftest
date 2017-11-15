@@ -25,12 +25,16 @@ export default class App extends Component<{}> {
    }
    componentDidMount() {
      //RNFolioReader.open(`testbook`)
-this.openEpub()
-return
+//this.openEpub()
+//return
 
-     let dirs = RNFetchBlob.fs.dirs
-     RNFetchBlob.config({
-        path: dirs.SDCardApplicationDir + '/testbook.epub'
+     //let dirs = RNFetchBlob.fs.dirs
+       const url = 'https://www.inkitt.com/epubs/' + encodeURIComponent('eBook - Alpha Malik - Midika Crane.epub')
+     console.info(url)
+       RNFetchBlob.config({
+           fileCache : true,
+           appendExt : 'epub'
+       // path: dirs.SDCardApplicationDir + '/testbook.epub'
         /*,
         addAndroidDownloads : {
             useDownloadManager : false, // <-- this is the only thing required
@@ -43,7 +47,8 @@ return
         }
         */
       })
-      .fetch('GET',`https://djjob.ru/book/testbook.epub`)
+         .fetch('GET', url)
+     // .fetch('GET',`https://djjob.ru/book/testbook.epub`)
       .then((res) => {
         console.log(res.path())
         this.setState({downloaded: true, filePath: res.path() }, this.openEpub)
