@@ -1,4 +1,11 @@
-import { requireNativeComponent } from 'react-native';
+import React, { Component } from 'react'
+import { requireNativeComponent } from 'react-native'
 
-// requireNativeComponent automatically resolves 'RNTMap' to 'RNTMapManager'
-module.exports = requireNativeComponent('RNFolioReader', null);
+class FolioView extends Component {
+  render () {
+    const { colors, ...otherProps } = this.props
+    return <RNFolio {...otherProps} />
+  }
+}
+const RNFolio = requireNativeComponent('RNFolioSwift', null)
+export default FolioView

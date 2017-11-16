@@ -16,7 +16,10 @@ import {
 } from 'react-native';
 //import RNFS from 'react-native-fs';
 import RNFetchBlob from 'react-native-fetch-blob'
-const { RNFolioReader } = NativeModules
+import FolioView from './FolioView'
+//const { RNFolioReader } = NativeModules
+
+
 
 export default class App extends Component<{}> {
 
@@ -28,13 +31,11 @@ export default class App extends Component<{}> {
 //this.openEpub()
 //return
 
-        //let dirs = RNFetchBlob.fs.dirs
+        const dirs = RNFetchBlob.fs.dirs
         const url = 'https://www.inkitt.com/epubs/' + encodeURIComponent('eBook - Alpha Malik - Midika Crane.epub')
         console.info(url)
         RNFetchBlob.config({
-            fileCache : true,
-            appendExt : 'epub'
-            // path: dirs.SDCardApplicationDir + '/testbook.epub'
+             path: dirs.DocumentDir + '/testbook.epub'
             /*,
             addAndroidDownloads : {
                 useDownloadManager : false, // <-- this is the only thing required
@@ -51,7 +52,8 @@ export default class App extends Component<{}> {
             // .fetch('GET',`https://djjob.ru/book/testbook.epub`)
             .then((res) => {
                 console.log(res.path())
-                this.setState({downloaded: true, filePath: res.path() }, this.openEpub)
+                const filePath = Platform.OS === 'android' ? res.path() : res.path()
+                this.setState({downloaded: true, filePath })
                 // open the document directly
                 //RNFetchBlob.ios.previewDocument(res.path())
                 // or show options
@@ -76,16 +78,16 @@ export default class App extends Component<{}> {
         const { filePath } = this.state
         console.log(filePath)
         InteractionManager.runAfterInteractions(() => {
-            RNFolioReader.open(filePath)
+           // RNFolioReader.open(filePath)
         });
 
     }
     render() {
-        // after this line
+        const { filePath } = this.state
         return (
 
             <View style={styles.container}>
-                {this.state.downloaded ? <View /> : <ActivityIndicator/>}
+                {this.state.downloaded ? <FolioView resourcePath={filePath} /> : <ActivityIndicator/>}
             </View>
         );
     }
