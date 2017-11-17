@@ -15,19 +15,30 @@ class RNFolioView : UIView {
   var config: FolioReaderConfig
   var folioReader: FolioReader
   var viewController: UIViewController
+  var readerContaner: FolioReaderContainer
+  private var _resourcePath:String?
+  var resourcePath: String? {
+    set {
+      self._resourcePath = newValue
+      self.loadBook()
+    }
+    get {
+      return self._resourcePath
+    }
+  }
+
   override init(frame: CGRect) {
     self.config = FolioReaderConfig()
     self.folioReader = FolioReader()
     self.viewController = UIViewController()
+    self.readerContaner = FolioReaderContainer(withConfig:config, folioReader:folioReader, epubPath:"")
     super.init(frame: frame);
     self.frame = frame;
-    let resourcePath = Bundle.main.path(forResource: "eBook - Alpha Malik - Midika Crane", ofType: "epub")
-    config.scrollDirection = .horizontalWithVerticalContent
-    let readerContaner = FolioReaderContainer(withConfig:config, folioReader:folioReader, epubPath:resourcePath!)
+    self.config.scrollDirection = .horizontalWithVerticalContent
     
-    
-   /* let childViewController = UIStoryboard(name: "readerContaner", bundle: nil).instantiateViewController(withIdentifier: "readerContaner")
- */
+  }
+  public func loadBook() {
+    readerContaner.setupConfig(self.config, epubPath: self.resourcePath!)
     self.viewController.addChildViewController(readerContaner)
     self.viewController.view.addSubview(readerContaner.view)
     readerContaner.didMove(toParentViewController: self.viewController)
@@ -36,11 +47,10 @@ class RNFolioView : UIView {
     guard let publisherView = self.viewController.view else {return}
     publisherView.frame = self.bounds
     publisherView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-   
+    
     addSubview(publisherView)
     self.publisherView = publisherView
   }
-  
   override func layoutSubviews() {
     super.layoutSubviews()
     self.publisherView?.frame = self.bounds

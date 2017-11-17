@@ -8,6 +8,6 @@
 
 #import <React/RCTView.h>
 
-@interface RNFolioReader : RCTView
-
+@interface RNFolioView: RCTView
+@property (nonatomic, assign) NSString *resourcePath;
 @end

@@ -10,7 +10,9 @@
 #import <React/RCTViewManager.h>
 
 @interface RCT_EXTERN_MODULE(RNFolioReaderSwift, RCTViewManager)
+RCT_EXPORT_VIEW_PROPERTY(resourcePath, NSString)
 @end
 
 @interface RCT_EXTERN_MODULE(RNFolioViewSwift, UIView)
+
 @end

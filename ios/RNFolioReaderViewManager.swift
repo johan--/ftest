@@ -13,8 +13,11 @@ import FolioReaderKit
 class RNFolioReaderViewManager: RCTViewManager {
 
   override func view() -> UIView! {
-    
-    
+  /*
+    let resourcePath = Bundle.main.path(forResource: "eBook - Alpha Malik - Midika Crane", ofType: "epub")
+    let fView = RNFolioView()
+    fView.loadBook(resourcePath: resourcePath!)
+ */
     return RNFolioView(); // We'll change this later
   }
 }
