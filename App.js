@@ -31,10 +31,12 @@ export default class App extends Component<{}> {
 //return
 
         const dirs = RNFetchBlob.fs.dirs
-        const url = 'https://www.inkitt.com/epubs/' + encodeURIComponent('eBook - Alpha Malik - Midika Crane.epub')
+        const url = 'https://www.inkitt.com/epubs/' + encodeURIComponent('I Dare You To Love Me - Becca Fox (1).epub')
         console.info(url)
         RNFetchBlob.config({
-             path: dirs.DocumentDir + '/testbook.epub'
+            fileCache : true,
+            appendExt : 'epub'
+             //path: dirs.DocumentDir + '/testbook.epub'
             /*,
             addAndroidDownloads : {
                 useDownloadManager : false, // <-- this is the only thing required
