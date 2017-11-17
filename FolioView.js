@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { requireNativeComponent } from 'react-native'
+import PropTypes from 'prop-types'
+let RNFolioView = requireNativeComponent('RNFolioReaderSwift', null)
 
 class FolioView extends Component {
   render () {
-    const { colors, ...otherProps } = this.props
-    return <RNFolio {...otherProps} />
+  //  const { ...otherProps } = this.props
+    return <RNFolioView style={{ flex: 1 }} />
   }
 }
-const RNFolio = requireNativeComponent('RNFolioSwift', null)
+FolioView.propTypes = {
+  resourcePath: PropTypes.string.isRequired
+}
+
 export default FolioView

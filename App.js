@@ -10,7 +10,6 @@ import {
     StyleSheet,
     Text,
     View,
-    NativeModules,
     ActivityIndicator,
     InteractionManager
 } from 'react-native';
@@ -86,14 +85,20 @@ export default class App extends Component<{}> {
         const { filePath } = this.state
         return (
 
-            <View style={styles.container}>
-                {this.state.downloaded ? <FolioView resourcePath={filePath} /> : <ActivityIndicator/>}
+            <View style={{flex: 1}}>
+                {this.state.downloaded ? <FolioView resourcePath={filePath} style= {{flex: 1}} /> : <ActivityIndicator/>}
+                <Text style={styles.txtOverlay}>This is overlay</Text>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+  txtOverlay: {
+    position:'absolute',
+    fontSize: 20,
+    top: 100
+  },
     container: {
         flex: 1,
         justifyContent: 'center',

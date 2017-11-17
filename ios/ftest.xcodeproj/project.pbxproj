@@ -23,10 +23,10 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1F341D771FBDA33E00A79A97 /* testbook.epub in Resources */ = {isa = PBXBuildFile; fileRef = 1F341D761FBDA30700A79A97 /* testbook.epub */; };
-		1FFEBC151FBCF7C600768F0C /* RNFolioViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEBC141FBCF7C600768F0C /* RNFolioViewManager.swift */; };
-		1FFEBC181FBCF88C00768F0C /* RNFolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEBC171FBCF88C00768F0C /* RNFolio.m */; };
-		1FFEBC1A1FBCFA0300768F0C /* RNFolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEBC191FBCFA0300768F0C /* RNFolioView.swift */; };
-		1FFEBC1F1FBD066C00768F0C /* ftest-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEBC1E1FBD066C00768F0C /* ftest-Bridging-Header.m */; };
+		1F801B2F1FBF08D100B0EA94 /* RNFolioReaderViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F801B2E1FBF08D100B0EA94 /* RNFolioReaderViewManager.swift */; };
+		1F801B361FBF0A0300B0EA94 /* RNFolioReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F801B351FBF0A0300B0EA94 /* RNFolioReader.m */; };
+		1F801B531FBF13ED00B0EA94 /* eBook - Alpha Malik - Midika Crane.epub in Resources */ = {isa = PBXBuildFile; fileRef = 1F801B521FBF13E600B0EA94 /* eBook - Alpha Malik - Midika Crane.epub */; };
+		1F801B551FBF1D4200B0EA94 /* RNFolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F801B541FBF1D4200B0EA94 /* RNFolioView.swift */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -337,12 +337,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ftest/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1F341D761FBDA30700A79A97 /* testbook.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = testbook.epub; sourceTree = "<group>"; };
-		1FFEBC141FBCF7C600768F0C /* RNFolioViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNFolioViewManager.swift; sourceTree = "<group>"; };
-		1FFEBC161FBCF88C00768F0C /* RNFolio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNFolio.h; sourceTree = "<group>"; };
-		1FFEBC171FBCF88C00768F0C /* RNFolio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNFolio.m; sourceTree = "<group>"; };
-		1FFEBC191FBCFA0300768F0C /* RNFolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNFolioView.swift; sourceTree = "<group>"; };
-		1FFEBC1D1FBD064600768F0C /* ftest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ftest-Bridging-Header.h"; sourceTree = "<group>"; };
-		1FFEBC1E1FBD066C00768F0C /* ftest-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ftest-Bridging-Header.m"; sourceTree = "<group>"; };
+		1F801B2E1FBF08D100B0EA94 /* RNFolioReaderViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNFolioReaderViewManager.swift; sourceTree = "<group>"; };
+		1F801B301FBF093D00B0EA94 /* ftest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ftest-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F801B311FBF093D00B0EA94 /* ftest-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ftest-Bridging-Header.m"; sourceTree = "<group>"; };
+		1F801B341FBF0A0300B0EA94 /* RNFolioReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNFolioReader.h; sourceTree = "<group>"; };
+		1F801B351FBF0A0300B0EA94 /* RNFolioReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNFolioReader.m; sourceTree = "<group>"; };
+		1F801B521FBF13E600B0EA94 /* eBook - Alpha Malik - Midika Crane.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eBook - Alpha Malik - Midika Crane.epub"; sourceTree = SOURCE_ROOT; };
+		1F801B541FBF1D4200B0EA94 /* RNFolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNFolioView.swift; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ftest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ftest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ftest-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ftest-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECA619DA4A66141EF7C5EA8 /* Pods_ftest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ftest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -497,6 +498,8 @@
 		13B07FAE1A68108700A75B9A /* ftest */ = {
 			isa = PBXGroup;
 			children = (
+				1F801B301FBF093D00B0EA94 /* ftest-Bridging-Header.h */,
+				1F801B311FBF093D00B0EA94 /* ftest-Bridging-Header.m */,
 				1F341D761FBDA30700A79A97 /* testbook.epub */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -505,12 +508,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				1FFEBC141FBCF7C600768F0C /* RNFolioViewManager.swift */,
-				1FFEBC161FBCF88C00768F0C /* RNFolio.h */,
-				1FFEBC171FBCF88C00768F0C /* RNFolio.m */,
-				1FFEBC191FBCFA0300768F0C /* RNFolioView.swift */,
-				1FFEBC1D1FBD064600768F0C /* ftest-Bridging-Header.h */,
-				1FFEBC1E1FBD066C00768F0C /* ftest-Bridging-Header.m */,
+				1F801B2E1FBF08D100B0EA94 /* RNFolioReaderViewManager.swift */,
+				1F801B341FBF0A0300B0EA94 /* RNFolioReader.h */,
+				1F801B351FBF0A0300B0EA94 /* RNFolioReader.m */,
+				1F801B541FBF1D4200B0EA94 /* RNFolioView.swift */,
 			);
 			name = ftest;
 			sourceTree = "<group>";
@@ -558,6 +559,14 @@
 				1F06D48E1F9B63F700A5B507 /* libRNFetchBlob.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1F801B371FBF127F00B0EA94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F801B521FBF13E600B0EA94 /* eBook - Alpha Malik - Midika Crane.epub */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5C9838C92BF14B088F4B8BC0 /* Pods */ = {
@@ -620,6 +629,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				1F801B371FBF127F00B0EA94 /* Resources */,
 				13B07FAE1A68108700A75B9A /* ftest */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ftestTests */,
@@ -1112,6 +1122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F801B531FBF13ED00B0EA94 /* eBook - Alpha Malik - Midika Crane.epub in Resources */,
 				1F341D771FBDA33E00A79A97 /* testbook.epub in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -1246,12 +1257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFEBC1A1FBCFA0300768F0C /* RNFolioView.swift in Sources */,
-				1FFEBC1F1FBD066C00768F0C /* ftest-Bridging-Header.m in Sources */,
+				1F801B551FBF1D4200B0EA94 /* RNFolioView.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				1F801B2F1FBF08D100B0EA94 /* RNFolioReaderViewManager.swift in Sources */,
+				1F801B361FBF0A0300B0EA94 /* RNFolioReader.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				1FFEBC181FBCF88C00768F0C /* RNFolio.m in Sources */,
-				1FFEBC151FBCF7C600768F0C /* RNFolioViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
